@@ -3,38 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=, initial-scale=1.0">
     <title>Document</title>
 </head>
-<style type="text/css">
-    html{
+<style>
+html{
     margin: 0;
     padding: 0;
 }
-.row{
+.tf{
     display: flex;
     width: 500px;
     padding: 10px 5px;
 }
-.green{
+.ys{
     background: #c0bdbd !important;
     opacity: o.5;
 }
 
-.col-3{
+.tp-lie{
     width: 30%;
 }
-.col-7{
+.tp-aloe{
     width: 70%;
 }
 span{
     padding: 10px;
 }
-.btn{
+.as{
     margin: 25px 0;
 
 }
-.btn-bt{
+.as-bt{
     background: red;
     color: #fff;
     padding: 10px 15px;
@@ -44,7 +44,7 @@ span{
     margin: 0 40%;
 }
 
-.row-2{
+.tf-2{
     display: flex;
     background-color: rgb(218, 218, 218);
     text-align: center;
@@ -53,11 +53,11 @@ span{
 .mt-5{
     margin-top: 50px;
 }
-.col-2{
+.tp-ashe{
     width: 20%;
     border-left: 2px solid #fff ;
 }
-.col-2 p{
+.tp-ashe p{
     margin-left: 10px; 
 }
 .col-15{
@@ -68,7 +68,99 @@ span{
     width: 5%;
 }
 </style>
-<script>
+<body>
+    <div class="main">
+        <div class="tf ys">
+            <div class="tp-lie">
+                <span >Số tiền vay</span>
+            </div>
+            <div class="tp-aloe">
+                <input type="text" class="money" value="">
+                <span>VND</span>
+            </div>
+        </div>
+
+        <div class="tf">
+            <div class="tp-lie">
+                <span>Thời gian vay</span>
+            </div>
+            <div class="tp-aloe">
+                <input type="number" class="month" value="">
+                <span>Tháng</span>
+            </div>
+        </div>
+
+        <div class="tf ys">
+            <div class="tp-lie">
+                <span>Lãi xuất</span>
+            </div>
+            <div class="tp-aloe">
+                <input type="number" class="laisuat" value="">
+                <span>% năm</span>
+            </div>
+        </div>
+        <div class="tf">
+            <div class="tp-lie">
+                <span>Ngày giải ngân</span>
+            </div>
+            <div class="tp-aloe">
+                <input type="date" class="date" value="">
+                <span></span>
+            </div>
+        </div>
+
+        <div class="as tf">
+            <span class="as-bt">Tính</span>
+        </div>
+    </div>
+    
+    <div class="HoaDon">
+        <div class="tf-2 mt-5 ys">
+            <div class="tp-ashe">
+                <p>Kì trả nợ</p>
+            </div>
+            <div class="tp-ashe">
+                <p>Số gốc còn lại</p>
+            </div>
+            <div class="tp-ashe">
+                <p>Gốc</p>
+            </div>
+            <div class="tp-ashe">
+                <p>Lãi</p>
+            </div>
+            <div class="tp-ashe">
+                <p>Tổng gốc còn lại</p>
+            </div>
+        </div>
+    
+    <div class="details">
+        <!-- <div class="detail">
+        <div class="tf-2">
+            <div class="col-15">
+                <p class="debtDay">16/04/2021</p>
+            </div>
+            <div class="col-5">
+                <p class="number">0</p>
+            </div>
+            <div class="tp-ashe">
+                <p class="tienGocConLai">100,000,000</p>
+            </div>
+            <div class="tp-ashe">
+                <p class="Goc">0</p>
+            </div>
+            <div class="tp-ashe">
+                <p class="Lai">0</p>
+            </div>
+            <div class="tp-ashe">
+                <p class="GocVaLai">0</p>
+            </div>
+        </div>
+        </div> -->
+    <!-- </div>    -->
+
+    </div>
+</body>
+<script >
     const $ = document.querySelector.bind(document)
 const $$ = document.querySelectorAll.bind(document)
 
@@ -120,7 +212,7 @@ const $money = $('.money')
 const $month = $('.month')
 const $laisuat = $('.laisuat')
 const $date = $('.date')
-const $btn = $('.btn-bt')
+const $as = $('.as-bt')
 const $render = $('.details')
 const _this = this
 var arr = []
@@ -139,7 +231,7 @@ var arr = []
             for (var i = 0;i<=$month.value;i++){
             arr.push(  
             `<div class="detail">
-                <div class="row-2">
+                <div class="tf-2">
                     <div class="col-15">
                         <p class="debtDay">${date}</p>
                     </div>
@@ -148,19 +240,19 @@ var arr = []
                         <p class="number">${count}</p>
                     </div>
 
-                     <div class="col-2">
+                     <div class="tp-ashe">
                         <p class="tienGocConLai">${tienGocConLai}</p>
                     </div>
 
-                    <div class="col-2">
+                    <div class="tp-ashe">
                         <p class="Goc">${tienGoc}</p>
                     </div>
 
-                    <div class="col-2">
+                    <div class="tp-ashe">
                         <p class="Lai">${tienLaiPhaiTra}</p>
                     </div>
 
-                    <div class="col-2">
+                    <div class="tp-ashe">
                         <p class="GocVaLai">${sum}</p>
                      </div>
                 </div>
@@ -181,7 +273,7 @@ var arr = []
         },
         start: function(){
             const _this = this
-            $btn.onclick = function(){
+            $as.onclick = function(){
                 _this.bill()
                 _this.renderBill()
                 arr=[]
@@ -193,100 +285,4 @@ LichTraTien.start()
 
 
 </script>
-<body>
-    <div class="main">
-        <div class="row green">
-            <div class="col-3">
-                <span >So Tien Vay</span>
-            </div>
-
-            <div class="col-7">
-                <input type="text" class="money" value="">
-                <span>VND</span>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-3">
-                <span>Thoi gian vay</span>
-            </div>
-
-            <div class="col-7">
-                <input type="number" class="month" value="">
-                <span>thang</span>
-            </div>
-        </div>
-
-        <div class="row green">
-            <div class="col-3">
-                <span>Lai Suat</span>
-            </div>
-
-            <div class="col-7">
-                <input type="number" class="laisuat" value="">
-                <span>% nam</span>
-            </div>
-        </div>
-        <div class="row ">
-            <div class="col-3">
-                <span>Ngay Giai Ngan</span>
-            </div>
-
-            <div class="col-7">
-                <input type="date" class="date" value="">
-                <span></span>
-            </div>
-        </div>
-
-        <div class="btn green row">
-            <span class="btn-bt">Tinh</span>
-        </div>
-    </div>
-    
-    <div class="HoaDon">
-        <div class="row-2 mt-5 green">
-            <div class="col-2">
-                <p>Ki Tra No</p>
-            </div>
-            <div class="col-2">
-                <p>So goc con lai</p>
-            </div>
-            <div class="col-2">
-                <p>Goc</p>
-            </div>
-            <div class="col-2">
-                <p>Lai</p>
-            </div>
-            <div class="col-2">
-                <p>Tong goc cong lai</p>
-            </div>
-        </div>
-    
-    <div class="details">
-        <!-- <div class="detail">
-        <div class="row-2">
-            <div class="col-15">
-                <p class="debtDay">16/04/2021</p>
-            </div>
-            <div class="col-5">
-                <p class="number">0</p>
-            </div>
-            <div class="col-2">
-                <p class="tienGocConLai">100,000,000</p>
-            </div>
-            <div class="col-2">
-                <p class="Goc">0</p>
-            </div>
-            <div class="col-2">
-                <p class="Lai">0</p>
-            </div>
-            <div class="col-2">
-                <p class="GocVaLai">0</p>
-            </div>
-        </div>
-        </div> -->
-    <!-- </div>    -->
-
-    </div>
-</body>
 </html>
